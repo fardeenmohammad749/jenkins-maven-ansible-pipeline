@@ -1,35 +1,33 @@
-For APIs
+# CI/CD Pipeline using Jenkins, Maven and Ansible
 
-# Run test
-```
-$mvnw clean test
-```
+## Overview
+This project demonstrates a complete CI/CD pipeline for a Java web application using Jenkins, Maven and Ansible.
 
-# Create WAR file
-```
-$mvnw clean package
-```
+## Tools Used
+- Java
+- Maven
+- Jenkins
+- Ansible
+- GitHub
 
-#  How to run web server with Apache Tomcat ?
+## Pipeline Flow
 
-```
-$mvnw tomcat7:run
-```
+Developer
+   ↓
+GitHub
+   ↓
+Jenkins
+   ↓
+Maven Build
+   ↓
+Ansible Deployment
 
-#  Run in browser 
-* http://localhost:8080/api/hello
-* http://localhost:8080/api/hello.html
+## Features
+- Source code management with GitHub
+- Automated builds using Jenkins
+- Dependency management using Maven
+- Automated deployment using Ansible
+- CI/CD pipeline implementation
 
-
-
-## Step to create server
-
-1. สร้าง MySQL Database
-```
-docker container run -d -p 3306:3306  \
--e MYSQL_ROOT_PASSWORD=password \
--e MYSQL_DATABASE=wallet \
--e MYSQL_USER=user01 \
--e MYSQL_PASSWORD=xitgmLwmp \
---name db2 mysql:5.7.21
-```
+## Author
+Fardeen Mohammad

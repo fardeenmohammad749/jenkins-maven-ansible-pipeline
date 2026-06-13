@@ -1,22 +1,27 @@
 pipeline {
     agent any
 
+    tools {
+        jdk 'JDK21'
+        maven 'Maven-3.9.16'
+    }
+
     stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/fardeenmohammad749/jenkins-maven-ansible-pipeline.git'
+            }
+        }
+
         stage('Build') {
             steps {
-                echo 'building the project'
+                bat 'mvn clean package'
             }
         }
 
-        stage('test') {
+        stage('Test') {
             steps {
-                echo 'testing the project'
-            }
-        }
-
-        stage('deploy') {
-            steps {
-                echo 'deploying the project'
+                bat 'mvn test'
             }
         }
     }
